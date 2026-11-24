@@ -68,7 +68,7 @@ public class ColorWheelUI : MonoBehaviour
     {
         if (wheelRoot != null) wheelRoot.SetActive(false);
         if (cameraInputController == null)
-            cameraInputController = FindFirstObjectByType<CinemachineInputAxisController>();
+            cameraInputController = FindAnyObjectByType<CinemachineInputAxisController>();
         if (cameraInputController == null)
             Debug.LogWarning("ColorWheelUI: no encuentro el CinemachineInputAxisController; la cámara girará con la rueda abierta.");
     }

@@ -19,7 +19,7 @@ public class WeaponController : MonoBehaviour
     void Start()
     {
         if (aim == null && Camera.main != null) aim = Camera.main.transform;
-        wheel = FindFirstObjectByType<ColorWheelUI>();
+        wheel = FindAnyObjectByType<ColorWheelUI>();
 
         foreach (WeaponBase w in weapons)
         {
