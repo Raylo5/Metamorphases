@@ -10,6 +10,14 @@ public class WorldColorController : MonoBehaviour
     [Tooltip("Rapidez de la transición de color (más alto = más rápido)")]
     public float transitionSpeed = 6f;
 
+    [Header("Niebla")]
+    [Tooltip("Tiñe también la niebla (debe coincidir con el horizonte del skybox)")]
+    public bool tintFog = true;
+    [Tooltip("Pon el mismo valor que 'Fuerza del tinte (cielo)' del material del skybox")]
+    [Range(0f, 1f)] public float fogTintStrength = 0.6f;
+
+    Color baseFogColor;
+
     static readonly int ColorID = Shader.PropertyToID("_MM_ModeColor");
     static readonly int AmountID = Shader.PropertyToID("_MM_ColorAmount");
 
@@ -18,6 +26,8 @@ public class WorldColorController : MonoBehaviour
 
     void Start()
     {
+        baseFogColor = RenderSettings.fogColor;  // el color que pusiste en Lighting > Fog
+
         ModeManager mm = ModeManager.Instance;
         if (mm == null) { Debug.LogWarning("WorldColorController: no hay ModeManager en la escena."); return; }
 
@@ -64,5 +74,17 @@ public class WorldColorController : MonoBehaviour
     {
         Shader.SetGlobalColor(ColorID, currentColor);
         Shader.SetGlobalFloat(AmountID, currentAmount);
+
+        if (tintFog)
+        {
+            Color tint = Color.Lerp(Color.white, currentColor, currentAmount * fogTintStrength);
+            RenderSettings.fogColor = baseFogColor * tint;
+        }
+    }
+
+    void OnDisable()
+    {
+        // Deja la niebla como estaba (si no, al parar el Play se quedaría teñida en la escena)
+        if (tintFog) RenderSettings.fogColor = baseFogColor;
     }
 }

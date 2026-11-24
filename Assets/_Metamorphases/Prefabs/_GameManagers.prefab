@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8318867788588449330
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5800078986642604312}
+  - component: {fileID: 6011938619527821155}
+  - component: {fileID: 4908624701204101938}
+  m_Layer: 0
+  m_Name: _GameManagers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5800078986642604312
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8318867788588449330}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.575357, y: -0.2961453, z: -4.0059657}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6011938619527821155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8318867788588449330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d03e36117cf44ff2546872dbef6bb50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  noneMode: {fileID: 11400000, guid: 6aa35a89dc546033310fc7596d61f863, type: 2}
+  blueMode: {fileID: 11400000, guid: 981450311346997f258cb855e9bdfdd7, type: 2}
+  redMode: {fileID: 11400000, guid: dffc3773f28487f20c510aef1ec3bba4, type: 2}
+  yellowMode: {fileID: 11400000, guid: b2275bbc662ec8c7f316071aa6e5ad2b, type: 2}
+  cooldown: 0.85
+  debugUnlockAll: 0
+  debugStartMode: 1
+  debugLogs: 1
+  onModeChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  onModeUnlocked:
+    m_PersistentCalls:
+      m_Calls: []
+  onWristbandObtained:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeRejected:
+    m_PersistentCalls:
+      m_Calls: []
+  onCooldownFinished:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &4908624701204101938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8318867788588449330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fc5be037f86d7becfe00a44a1205234, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transitionSpeed: 6

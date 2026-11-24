@@ -19,6 +19,6 @@ MonoBehaviour:
   moveSpeed: 8
   jumpForce: 5.5
   extraJumps: 1
-  extraJumpForce: 6
+  extraJumpForce: 6.5
   airControl: 0.6
   interactTime: 0.3
